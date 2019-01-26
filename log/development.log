@@ -213,3 +213,21 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 108.6.226.64 at 2019-01-26 19:19:17 +0000
+
+
+Started POST "/posts" for 108.6.226.64 at 2019-01-26 19:19:22 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yadPk4nxg7AzH3Il4HTWwniySz47ychFAsgFZBoPuVl6jdTgWrqMTA/iydBEd4ZZuqpnWR+8zS/wArIo80hH+Q==", "title"=>"title", "description"=>"desc", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title"], ["description", "desc"], ["created_at", "2019-01-26 19:19:22.187781"], ["updated_at", "2019-01-26 19:19:22.187781"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://165.227.81.218:48558/posts/4
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/4" for 108.6.226.64 at 2019-01-26 19:19:22 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 0.2ms)
